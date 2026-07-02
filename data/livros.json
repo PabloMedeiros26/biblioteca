@@ -1,0 +1,21 @@
+[
+    {
+        "id": 101,
+        "titulo": "cem anos de solidao",
+        "autor": "Gabriel Garcia Marquez",
+        "genero": "realismo magico",
+        "ano": 1967,
+        "status": "lido",
+        "avaliacao": 5
+    },
+
+    {
+        "id": 102,
+        "titulo": "crime e castigo",
+        "autor": "Fiodor Dostoirvski",
+        "genero": "romance realista",
+        "ano": 1866,
+        "status": "lido",
+        "avaliacao": 5
+    }
+]
