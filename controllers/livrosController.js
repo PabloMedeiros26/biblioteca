@@ -21,5 +21,29 @@ function buscarPorId(req, res) {
 
     res.json(resultado)
 }
-module.exports = {listarLivros, buscarPorId}
+
+function criarLivros(req, res) {
+    const dados = fs.readFileSync('./data/livros.json')
+    const requi = JSON.parse(dados)
+    const ids = requi.map(function(livros) {
+        return livros.id
+    })
+    const maiorId = Math.max(...ids)
+    const novoId = maiorId + 1
+    const novoLivro = {
+        id: novoId,
+        titulo: req.body.titulo,
+        autor: req.body.autor,
+        genero: req.body.genero,
+        ano: req.body.ano,
+        status: req.body.status,
+        avaliacao: req.body.avaliacao
+    }
+
+    requi.push(novoLivro)
+    const converter = JSON.stringify(requi, null, 2)
+    fs.writeFileSync('./data/livros.json', converter)
+    res.status(201).json(novoLivro)
+}
+module.exports = {listarLivros, buscarPorId, criarLivros}
 

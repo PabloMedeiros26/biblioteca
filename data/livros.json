@@ -1,21 +1,38 @@
 [
-    {
-        "id": 101,
-        "titulo": "cem anos de solidao",
-        "autor": "Gabriel Garcia Marquez",
-        "genero": "realismo magico",
-        "ano": 1967,
-        "status": "lido",
-        "avaliacao": 5
-    },
-
-    {
-        "id": 102,
-        "titulo": "crime e castigo",
-        "autor": "Fiodor Dostoirvski",
-        "genero": "romance realista",
-        "ano": 1866,
-        "status": "lido",
-        "avaliacao": 5
-    }
+  {
+    "id": 101,
+    "titulo": "cem anos de solidao",
+    "autor": "Gabriel Garcia Marquez",
+    "genero": "realismo magico",
+    "ano": 1967,
+    "status": "lido",
+    "avaliacao": 5
+  },
+  {
+    "id": 102,
+    "titulo": "crime e castigo",
+    "autor": "Fiodor Dostoirvski",
+    "genero": "romance realista",
+    "ano": 1866,
+    "status": "lido",
+    "avaliacao": 5
+  },
+  {
+    "id": 103,
+    "titulo": "rapido e devagar",
+    "autor": "Daniel Kahneman",
+    "genero": "psicologia",
+    "ano": 2011,
+    "status": "lendo",
+    "avaliacao": null
+  },
+  {
+    "id": 104,
+    "titulo": "uma vida pequena",
+    "autor": "Hanya Yanagihara",
+    "genero": "ficcao contemporanea",
+    "ano": 2015,
+    "status": "quero ler",
+    "avaliacao": null
+  }
 ]
