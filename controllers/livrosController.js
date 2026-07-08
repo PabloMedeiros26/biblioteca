@@ -45,5 +45,25 @@ function criarLivros(req, res) {
     fs.writeFileSync('./data/livros.json', converter)
     res.status(201).json(novoLivro)
 }
-module.exports = {listarLivros, buscarPorId, criarLivros}
+
+function atualizarLivro(req, res) {
+    const nome = Number(req.params.id)
+    const dados = fs.readFileSync('./data/livros.json')
+    const requi = JSON.parse(dados)
+    const resultado = requi.findIndex(function(livros) {
+        return livros.id === nome
+    })
+        if(resultado === -1) {
+        return res.status(404).json({erro: 'Livro não encontado'})
+    }
+
+    const livroAntigo = requi[resultado]
+    const livroAtualizado = {...livroAntigo, ...req.body}
+
+    requi[resultado] = livroAtualizado
+    const converter = JSON.stringify(requi, null, 2)
+    fs.writeFileSync('./data/livros.json', converter)
+    res.status(200).json(livroAtualizado)
+}
+module.exports = {listarLivros, buscarPorId, criarLivros, atualizarLivro}
 
