@@ -64,6 +64,27 @@ function atualizarLivro(req, res) {
     const converter = JSON.stringify(requi, null, 2)
     fs.writeFileSync('./data/livros.json', converter)
     res.status(200).json(livroAtualizado)
+
 }
-module.exports = {listarLivros, buscarPorId, criarLivros, atualizarLivro}
+
+function deletarLivro(req, res) {
+    const nome = Number(req.params.id)
+    const dados = fs.readFileSync('./data/livros.json')
+    const requi = JSON.parse(dados)
+    const resultado = requi.findIndex(function(livros) {
+        return livros.id === nome
+    })
+        if(resultado === -1) {
+            return res.status(404).json({erro: 'Livro não encontrado'})
+        }
+
+    const livroRemovido = requi.splice(resultado, 1)
+
+    const converter = JSON.stringify(requi, null, 2)
+    fs.writeFileSync('./data/livros.json', converter)
+    res.status(200).json(livroRemovido[0]) 
+    
+
+}
+module.exports = {listarLivros, buscarPorId, criarLivros, atualizarLivro, deletarLivro}
 
